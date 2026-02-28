@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ job['title'] }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77a1d3 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
+        .job-detail {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border: #ddd 1px solid;
+            border-radius: 5px;
+        }
+        .job-detail h1 {
+            margin-top: 0;
+        }
+        .job-detail p {
+            line-height: 1.6em;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            border: #333 1px solid;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Job Detail</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="job-detail">
+            <h1>{{ job['title'] }}</h1>
+            <p><strong>Company:</strong> {{ job['company'] }}</p>
+            <p><strong>Description:</strong> {{ job['description'] }}</p>
+            <a class="back-link" href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
